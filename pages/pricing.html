@@ -211,29 +211,28 @@
 
             var tables = document.getElementsByTagName('table');
 
-            // Перебираем таблицы
+         
             for (var i = 0; i < tables.length; i++) {
                 var table = tables[i];
                 var rows = table.getElementsByTagName('tr');
 
-                // Перебираем строки таблицы, начиная со второй строки (индекс 1)
+
                 for (var j = 1; j < rows.length; j++) {
                     var row = rows[j];
                     var cells = row.getElementsByTagName('td');
 
-                    var serviceCell = cells[0]; // Ячейка с названием услуги
-                    var priceCell = cells[1]; // Ячейка с ценой услуги
+                    var serviceCell = cells[0]; 
+                    var priceCell = cells[1]; 
 
                     var serviceName = serviceCell.textContent.trim().toLowerCase();
                     var price = parseFloat(priceCell.textContent.replace('$', ''));
 
-                    // Фильтрация по категории (мен/жен)
+            
                     var showRow = true;
                     if (category !== 'all' && !table.classList.contains(category)) {
                         showRow = false;
                     }
 
-                    // Фильтрация по типу поиска (цена/название услуги)
                     if (searchType === 'price') {
                         var filterPrice = parseFloat(priceInput);
                         if (!isNaN(filterPrice) && price !== filterPrice) {
@@ -245,7 +244,7 @@
                         }
                     }
 
-                    // Показываем или скрываем строку в зависимости от фильтрации
+           
                     if (showRow) {
                         row.style.display = ''; // Отображаем строку
                     } else {
