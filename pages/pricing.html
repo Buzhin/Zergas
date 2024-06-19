@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Salon Pricing</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+  
+        #searchForm {
+            margin-bottom: 20px;
+        }
+
+        #searchForm label {
+            margin-right: 10px;
+        }
+
+        #searchForm select, #searchForm input[type="number"], #searchForm input[type="text"] {
+            width: 150px;
+            padding: 5px;
+        }
+
+        #searchForm button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #searchForm button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Beauty Salon "Beauty and Care"</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/pages/index.html">Home</a></li>
+            <li><a href="/pages/about.html">About Us</a></li>
+            <li><a href="/pages/services.html">Services</a></li>
+            <li><a href="/pages/pricing.html">Pricing</a></li>
+            <li><a href="/pages/contact.html">Contact</a></li>
+            <li><a href="/pages/registration.html">Register</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="pricing">
+            <h2>Pricing</h2>
+
+ 
+            <form id="searchForm">
+                <label for="categorySelect">Select Category:</label>
+                <select id="categorySelect">
+                    <option value="all">All</option>
+                    <option value="men">Men</option>
+                    <option value="women">Women</option>
+                </select>
+
+                <label for="searchTypeSelect">Search by:</label>
+                <select id="searchTypeSelect">
+                    <option value="price">Price</option>
+                    <option value="service">Service Name</option>
+                </select>
+
+                <input type="number" id="priceInput" placeholder="Enter price">
+                <input type="text" id="serviceInput" placeholder="Enter service name">
+
+                <button type="button" onclick="performSearch()">Search</button>
+            </form>
+
+            <div class="pricing-container" id="pricingContainer">
+                <div class="pricing-section men">
+                    <h3>Men</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Haircut</td>
+                                <td>$30</td>
+                            </tr>
+                            <tr>
+                                <td>Shave</td>
+                                <td>$20</td>
+                            </tr>
+                            <tr>
+                                <td>Beard Trim</td>
+                                <td>$15</td>
+                            </tr>
+                            <tr>
+                                <td>Facial</td>
+                                <td>$50</td>
+                            </tr>
+                            <tr>
+                                <td>Massage</td>
+                                <td>$60</td>
+                            </tr>
+                            <tr>
+                                <td>example</td>
+                                <td>$30</td>
+                            </tr>
+                            <tr>
+                                <td>Haircut</td>
+                                <td>$40</td>
+                            </tr>
+                            <tr>
+                                <td>example</td>
+                                <td>$25</td>
+                            </tr>
+                            <tr>
+                                <td>example</td>
+                                <td>$40</td>
+                            </tr>
+                            <tr>
+                                <td>example</td>
+                                <td>$35</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pricing-section women">
+                    <h3>Women</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Haircut</td>
+                                <td>$40</td>
+                            </tr>
+                            <tr>
+                                <td>Manicure</td>
+                                <td>$25</td>
+                            </tr>
+                            <tr>
+                                <td>Pedicure</td>
+                                <td>$35</td>
+                            </tr>
+                            <tr>
+                                <td>Facial</td>
+                                <td>$40</td>
+                            </tr>
+                            <tr>
+                                <td>Massage</td>
+                                <td>$25</td>
+                            </tr>
+                            <tr>
+                                <td>example</td>
+                                <td>$30</td>
+                            </tr>
+                            <tr>
+                                <td>Haircut</td>
+                                <td>$40</td>
+                            </tr>
+                            <tr>
+                                <td>example</td>
+                                <td>$25</td>
+                            </tr>
+                            <tr>
+                                <td>example</td>
+                                <td>$40</td>
+                            </tr>
+                            <tr>
+                                <td>example</td>
+                                <td>$35</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="photos">
+            <h2>Photos</h2>
+            <div class="photo-grid">
+                <img src="/images/photo1.jpg" alt="Photo 1">
+                <img src="/images/photo2.jpg" alt="Photo 2">
+                <img src="/images/photo3.jpg" alt="Photo 3">
+                <img src="/images/photo4.jpg" alt="Photo 4">
+                <img src="/images/photo5.jpg" alt="Photo 5">
+                <img src="/images/photo6.jpg" alt="Photo 6">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Beauty Salon "Beauty and Care"</p>
+    </footer>
+
+    <script>
+        function performSearch() {
+            var category = document.getElementById('categorySelect').value;
+            var searchType = document.getElementById('searchTypeSelect').value;
+            var priceInput = document.getElementById('priceInput').value;
+            var serviceInput = document.getElementById('serviceInput').value.toLowerCase();
+
+            var tables = document.getElementsByTagName('table');
+
+            // Перебираем таблицы
+            for (var i = 0; i < tables.length; i++) {
+                var table = tables[i];
+                var rows = table.getElementsByTagName('tr');
+
+                // Перебираем строки таблицы, начиная со второй строки (индекс 1)
+                for (var j = 1; j < rows.length; j++) {
+                    var row = rows[j];
+                    var cells = row.getElementsByTagName('td');
+
+                    var serviceCell = cells[0]; // Ячейка с названием услуги
+                    var priceCell = cells[1]; // Ячейка с ценой услуги
+
+                    var serviceName = serviceCell.textContent.trim().toLowerCase();
+                    var price = parseFloat(priceCell.textContent.replace('$', ''));
+
+                    // Фильтрация по категории (мен/жен)
+                    var showRow = true;
+                    if (category !== 'all' && !table.classList.contains(category)) {
+                        showRow = false;
+                    }
+
+                    // Фильтрация по типу поиска (цена/название услуги)
+                    if (searchType === 'price') {
+                        var filterPrice = parseFloat(priceInput);
+                        if (!isNaN(filterPrice) && price !== filterPrice) {
+                            showRow = false;
+                        }
+                    } else if (searchType === 'service') {
+                        if (serviceName.indexOf(serviceInput) === -1) {
+                            showRow = false;
+                        }
+                    }
+
+                    // Показываем или скрываем строку в зависимости от фильтрации
+                    if (showRow) {
+                        row.style.display = ''; // Отображаем строку
+                    } else {
+                        row.style.display = 'none'; // Скрываем строку
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
